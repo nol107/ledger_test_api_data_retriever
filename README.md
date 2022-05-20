@@ -3,17 +3,27 @@
 ## Prerequisites
 
 - This repository was implemented with python 3.8.5
-- Before running the main function, run a "pip install -r requirements.txt" to get all necessary additional libraries (to avoid libs conflicts, you may want to setup a virtualenv to run the code)
+- Before running the main function, run the following command to get all necessary additional libraries (to avoid libs conflicts, you may want to setup a virtualenv to run the code) : 
+
+```bash
+$ pip install -r requirements.txt
+```
 
 ## How it works
 
-- In the root of the repository, create a "config_api.ini" file (based on the config_template.ini one) : you have to add the JWT token and the API endpoint.
-- You can change the other config default values if it suits you (default_start_date / default_path)
-- Place yourself in the "data_updater" repository
-- Run "python3 entrypoint.py" (or "python entrypoint.py" according to your env) to generate a csv file with all the data available on the endpoint
+- In the root of the repository, create a `config_api.ini` file (based on the `config_template.ini` one) : you have to add the JWT token and the API endpoint.
+- You can change the other config default values if it suits you (`default_start_date` / `default_path`)
+- Place yourself in the `data_updater` repository
+- Run the following command (or `python entrypoint.py` according to your env) to generate a csv file with all the data available on the endpoint : 
+```bash
+$ python3 entrypoint.py
+```
 - If you re-run the same command, it will not append any data to the file.
 - If you delete the final rows of the csv file and re-run the command, it will only append the rows you deleted (or the new transactions added to the endpoint)
-- You can also run "python3 entrypoint.py --path my_personal_filename.csv" if you want to override the default file path
+- You can also run the following command if you want to override the default file path : 
+```bash
+$ python3 entrypoint.py --path my_personal_filename.csv
+```
 
 ## Next steps
 
