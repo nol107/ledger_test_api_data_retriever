@@ -32,6 +32,8 @@ def main(
     print("-------------------------------------------------------------------------------------")
 
 
+# Only one argument on the main function (to change the path)
+# We could think of 2 other arguments : "--reset" to rewrite a file from start date & "--completion" to also ingest the missing data from the start_date (not only new transactions)
 if __name__ == "__main__":
 
     if len(sys.argv) > 2 and sys.argv[1] == "--path":
