@@ -1,2 +1,2 @@
 config_api.ini
-data_updater/data/*
+data_updater/data/*.csv

@@ -7,6 +7,8 @@ from pydantic import BaseModel, Field, validator
 # We use a pydantic BaseModel to validate the format of each transaction retrieved through the API
 # It also allows use to immediately create a transaction_date that will help us setting up the start_date when ingesting the new data
 # And it could be the target column to partition the data (to be ingested in Snowflake for example)
+# Also the pydantic object is great to ensure the data model of what we receive is what we expect and the output data model is constant (even if a field is added in the API response)
+# Finally, we could choose to use Enum for currency_from/curency_to/status if we already know there is a finite set of values for these fields
 
 
 class Transaction(BaseModel):

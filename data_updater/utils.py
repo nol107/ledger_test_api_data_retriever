@@ -67,9 +67,9 @@ def ingest_incremental_data(token: str, URL: str, csv_path: str) -> int:
     df_trx_from_datetime = df_trx_from_start_date[
         df_trx_from_start_date["transaction_datetime_epoch"] > last_transaction_epoch
     ]
+    rows_to_write = len(df_trx_from_datetime)
 
     df_trx_updated = pd.concat([df_trx, df_trx_from_datetime], ignore_index=True, sort=False)
-    rows_to_write = len(df_trx_from_datetime)
     df_trx_updated.to_csv(csv_path, index=False)
 
     return rows_to_write
